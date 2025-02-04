@@ -7,11 +7,13 @@
 
 int main(){
 
+    // Declaracao de variaveis
     char cod[4], nom[20];
-    float pop = 0, area = 0, pibcid = 0;
+    float pop = 0, area = 0, pibcid = 0, pibcap = 0, densi = 0;
     int ntur = 0;
 
-    printf("Informe o código da cidade: ");
+    // Entrada e armazenamento dos dados
+    printf("Informe o código da carta: ");
     scanf("%s", &cod);
     printf("Informe o nome da cidade: ");
     scanf("%s", &nom);
@@ -24,11 +26,18 @@ int main(){
     printf("Informe o número de pontos turísticos da cidade: ");
     scanf("%i", &ntur);
 
-    printf("\n\nCódigo da cidade: %s\n", cod);
+    // Calculo PIB per capita e densidade populacional
+    pibcap = pibcid/pop;
+    densi = pop/area;
+
+    // Apresentacao dos dados da carta
+    printf("\n\nCódigo da carta: %s\n", cod);
     printf("Nome da cidade: %s\n", nom);
     printf("População da cidade: %.2f\n", pop);
-    printf("Área da cidade: %.2f\n", area);
+    printf("Área da cidade: %.2f km²\n", area);
+    printf("Densidade populacional: %f pessoas/km²\n", densi);
     printf("PIB da cidade: %.2f\n", pibcid);
+    printf("PIB per capita: %f reais\n", pibcap);
     printf("Número de pontos turísticos: %i\n", ntur);
     
 }
